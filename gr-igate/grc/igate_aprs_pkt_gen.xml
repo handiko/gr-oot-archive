@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<block>
+  <name>APRS packet generator</name>
+  <key>igate_aprs_pkt_gen</key>
+  <category>[igate]</category>
+  <import>import igate</import>
+  <make>igate.aprs_pkt_gen($interval, $src, $dst, $path, $pid, $ctrl, $info)</make>
+  <param>
+    <name>Interval (s)</name>
+    <key>interval</key>
+    <type>float</type>
+  </param>
+  <param>
+    <name>Source</name>
+    <key>src</key>
+    <type>string</type>
+  </param>
+  <param>
+    <name>Destination</name>
+    <key>dst</key>
+    <type>string</type>
+  </param>
+  <param>
+    <name>Path</name>
+    <key>path</key>
+    <type>string</type>
+  </param>
+  <param>
+    <name>Pid</name>
+    <key>pid</key>
+    <type>int</type>
+  </param>
+  <param>
+    <name>Control</name>
+    <key>ctrl</key>
+    <type>int</type>
+  </param>
+  <param>
+    <name>Information</name>
+    <key>info</key>
+    <type>string</type>
+  </param>
+  <source>
+    <name>out</name>
+    <type>message</type>
+  </source>
+</block>

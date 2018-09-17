@@ -1,0 +1,20 @@
+<block>
+  <name>Clock recovery timer</name>
+  <key>igate_clock_recovery_timer_bb</key>
+  <category>[igate]</category>
+  <import>import igate</import>
+  <make>igate.clock_recovery_timer_bb($samples_per_bit)</make>
+  <param>
+    <name>Samples_per_bit</name>
+    <key>samples_per_bit</key>
+    <type>float</type>
+  </param>
+  <sink>
+    <name>in</name>
+    <type>byte</type>
+  </sink>
+  <source>
+    <name>out</name>
+    <type>byte</type>
+  </source>
+</block>

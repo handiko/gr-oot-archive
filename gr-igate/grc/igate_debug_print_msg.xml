@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<block>
+  <name>Message printer</name>
+  <key>igate_debug_print_msg</key>
+  <category>[igate]</category>
+  <import>import igate</import>
+  <make>igate.debug_print_msg()</make>
+  <sink>
+    <name>in</name>
+    <type>message</type>
+  </sink>
+</block>

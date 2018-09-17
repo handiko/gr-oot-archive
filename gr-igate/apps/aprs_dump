@@ -1,0 +1,69 @@
+#!/usr/bin/env python
+
+from gnuradio import analog
+from gnuradio import eng_notation
+from gnuradio import filter
+from gnuradio import gr
+from gnuradio.eng_option import eng_option
+from gnuradio.filter import firdes
+from optparse import OptionParser, OptionGroup
+import igate
+import osmosdr
+import time
+
+class aprs_dump(gr.top_block):
+    def __init__(self, options):
+        gr.top_block.__init__(self, "APRS dump")
+
+        src_ident = self._setup_source(options)
+        self.dbg_print = igate.debug_print_msg()
+        self.msg_connect(src_ident, (self.dbg_print, 'in'))
+
+    def _setup_source(self, options):
+        af_samp_rate = 9600
+        if_samp_rate = af_samp_rate*2
+        rf_samp_rate = if_samp_rate*48
+
+        freq_offset = 100000
+        freq = options.frequency
+
+        self.src_rf_src = osmosdr.source( args = options.args )
+        self.src_rf_src.set_sample_rate( rf_samp_rate )
+        self.src_rf_src.set_center_freq( freq+freq_offset, 0)
+        self.src_rf_src.set_gain_mode(True, 0)
+        self.src_rf_src.set_gain(34, 0)
+
+        channel_taps = firdes.low_pass(1, rf_samp_rate, 12500, 2000)
+        self.src_channel_filter = filter.freq_xlating_fft_filter_ccc(
+            rf_samp_rate/if_samp_rate,
+            channel_taps,
+            -freq_offset,
+            rf_samp_rate
+            )
+        # We don't care about gain, since we're going to FM-demodulate it again
+        self.src_fm_demod = analog.quadrature_demod_cf(1.0)
+        self.src_aprs_demod = igate.aprs_demod(if_samp_rate)
+
+        self.connect((self.src_rf_src, 0), (self.src_channel_filter, 0))
+        self.connect((self.src_channel_filter, 0), (self.src_fm_demod, 0))
+        self.connect((self.src_fm_demod, 0), (self.src_aprs_demod, 0))
+
+        return (self.src_aprs_demod, 'out')
+
+def add_options(parser):
+    group = OptionGroup(parser, "Receiver options")
+    group.add_option("-f", "--frequency", type="eng_float", default=144.8e6,
+                   help="Frequency of APRS channel [default=%default]")
+    group.add_option("-a", "--args", type="string", default="",
+                   help="Arguments for osmocom source block [default=%default]")
+
+    parser.add_option_group(group)
+
+if __name__ == '__main__':
+    parser = OptionParser (option_class=eng_option, conflict_handler="resolve")
+    add_options(parser)
+    (options, args) = parser.parse_args ()
+
+    tb = aprs_dump(options)
+    tb.start()
+    tb.wait()

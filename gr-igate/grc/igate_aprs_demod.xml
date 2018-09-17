@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<block>
+  <name>APRS demod</name>
+  <key>igate_aprs_demod</key>
+  <category>[igate]</category>
+  <import>import igate</import>
+  <make>igate.aprs_demod($samp_rate)</make>
+  <param>
+    <name>samp_rate</name>
+    <key>samp_rate</key>
+    <value>9600</value>
+    <type>float</type>
+  </param>
+  <sink>
+    <name>in</name>
+    <type>float</type>
+  </sink>
+  <source>
+    <name>out</name>
+    <type>message</type>
+  </source>
+</block>

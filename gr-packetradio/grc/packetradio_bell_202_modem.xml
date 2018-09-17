@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<block>
+  <name>Bell 202 Modem</name>
+  <key>packetradio_bell_202_modem</key>
+  <category>[packetradio]</category>
+  <import>import packetradio</import>
+  <make>packetradio.bell_202_modem($samp_rate, $baud)</make>
+  <param>
+    <name>Sample Rate</name>
+    <key>samp_rate</key>
+    <value>38400</value>
+    <type>int</type>
+  </param>
+  <param>
+    <name>Baud Rate</name>
+    <key>baud</key>
+    <value>1200</value>
+    <type>int</type>
+  </param>
+  <sink>
+    <name>in</name>
+    <type>byte</type>
+  </sink>
+  <source>
+    <name>out</name>
+    <type>float</type>
+  </source>
+</block>

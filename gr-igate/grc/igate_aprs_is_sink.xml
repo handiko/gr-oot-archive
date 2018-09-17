@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<block>
+  <name>APRS-IS sink</name>
+  <key>igate_aprs_is_sink</key>
+  <category>[igate]</category>
+  <import>import igate</import>
+  <make>igate.aprs_is_sink($host, $port, $callsign, $password)</make>
+
+  <param>
+    <name>Hostname</name>
+    <key>host</key>
+    <type>string</type>
+  </param>
+  <param>
+    <name>Port</name>
+    <key>port</key>
+    <type>int</type>
+  </param>
+  <param>
+    <name>Callsign</name>
+    <key>callsign</key>
+    <type>string</type>
+  </param>
+  <param>
+    <name>Password</name>
+    <key>password</key>
+    <type>int</type>
+  </param>
+
+  <sink>
+    <name>in</name>
+    <type>message</type>
+  </sink>
+</block>

@@ -1,0 +1,18 @@
+<block>
+  <name>Unit Circle</name>
+  <key>airnav_unitcircle_ff</key>
+  <category>AIRNAV</category>
+  <import>import airnav</import>
+  <make>airnav.unitcircle_ff()</make>
+  <sink>
+    <name>in</name>
+    <type>float</type>
+  </sink>
+  <source>
+    <name>out</name>
+    <type>float</type>
+  </source>
+  <doc>
+Constrain a float value (in radians) to fall within a unit circle.
+  </doc>
+</block>

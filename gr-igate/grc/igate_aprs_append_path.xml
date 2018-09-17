@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<block>
+  <name>APRS append path</name>
+  <key>igate_aprs_append_path</key>
+  <category>[igate]</category>
+  <import>import igate</import>
+  <make>igate.aprs_append_path($suffix)</make>
+  <param>
+    <name>Path suffix</name>
+    <key>suffix</key>
+    <type>string</type>
+  </param>
+  <sink>
+    <name>in</name>
+    <type>message</type>
+  </sink>
+  <source>
+    <name>out</name>
+    <type>message</type>
+  </source>
+</block>

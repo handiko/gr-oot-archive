@@ -1,0 +1,30 @@
+INCLUDE(FindPkgConfig)
+PKG_CHECK_MODULES(PC_PACKETRADIO packetradio)
+
+FIND_PATH(
+    PACKETRADIO_INCLUDE_DIRS
+    NAMES packetradio/api.h
+    HINTS $ENV{PACKETRADIO_DIR}/include
+        ${PC_PACKETRADIO_INCLUDEDIR}
+    PATHS ${CMAKE_INSTALL_PREFIX}/include
+          /usr/local/include
+          /usr/include
+)
+
+FIND_LIBRARY(
+    PACKETRADIO_LIBRARIES
+    NAMES gnuradio-packetradio
+    HINTS $ENV{PACKETRADIO_DIR}/lib
+        ${PC_PACKETRADIO_LIBDIR}
+    PATHS ${CMAKE_INSTALL_PREFIX}/lib
+          ${CMAKE_INSTALL_PREFIX}/lib64
+          /usr/local/lib
+          /usr/local/lib64
+          /usr/lib
+          /usr/lib64
+)
+
+INCLUDE(FindPackageHandleStandardArgs)
+FIND_PACKAGE_HANDLE_STANDARD_ARGS(PACKETRADIO DEFAULT_MSG PACKETRADIO_LIBRARIES PACKETRADIO_INCLUDE_DIRS)
+MARK_AS_ADVANCED(PACKETRADIO_LIBRARIES PACKETRADIO_INCLUDE_DIRS)
+

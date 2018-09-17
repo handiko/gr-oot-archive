@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<block>
+  <name>AX.25 Protocol Encoder</name>
+  <key>packetradio_ax25_protocol_encode</key>
+  <category>[packetradio]</category>
+  <import>import packetradio</import>
+  <make>packetradio.ax25_protocol_encode($dcall, $scall, $shift_call, $control)</make>
+  <param>
+    <name>Source Callsign</name>
+    <key>scall</key>
+    <value>NOCALL</value>
+    <type>string</type>
+  </param>
+  <param>
+    <name>Destination Callsign</name>
+    <key>dcall</key>
+    <value>CQ</value>
+    <type>string</type>
+  </param>
+  <param>
+    <name>Left Shift Callsign</name>
+    <key>shift_call</key>
+    <value>True</value>
+    <type>bool</type>
+  </param>
+  <param>
+    <name>Control Byte</name>
+    <key>control</key>
+    <value>0x03</value>
+    <type>int</type>
+  </param>
+  <sink>
+    <name>in</name>
+    <type>message</type>
+  </sink>
+  <source>
+    <name>out</name>
+    <type>message</type>
+  </source>
+</block>

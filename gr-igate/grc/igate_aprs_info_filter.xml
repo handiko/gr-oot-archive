@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<block>
+  <name>APRS info filter</name>
+  <key>igate_aprs_info_filter</key>
+  <category>[igate]</category>
+  <import>import igate</import>
+  <make>igate.aprs_info_filter($regexp)</make>
+
+  <param>
+    <name>regexp</name>
+    <key>regexp</key>
+    <type>bool</type>
+  </param>
+
+  <sink>
+    <name>in</name>
+    <type>message</type>
+  </sink>
+
+  <source>
+    <name>out</name>
+    <type>message</type>
+  </source>
+</block>

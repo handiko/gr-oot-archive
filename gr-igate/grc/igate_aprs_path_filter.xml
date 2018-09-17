@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<block>
+  <name>APRS path filter</name>
+  <key>igate_aprs_path_filter</key>
+  <category>[igate]</category>
+  <import>import igate</import>
+  <make>igate.aprs_path_filter($regexp, $exclude, $include_dst)</make>
+  <param>
+    <name>regexp</name>
+    <key>regexp</key>
+    <type>string</type>
+  </param>
+  
+  <param>
+    <name>Exclude</name>
+    <key>exclude</key>
+    <value>True</value>
+    <type>bool</type>
+  </param>
+
+  <param>
+    <name>Include dst addr</name>
+    <key>include_dst</key>
+    <value>False</value>
+    <type>bool</type>
+  </param>
+
+  <sink>
+    <name>in</name>
+    <type>message</type>
+  </sink>
+
+  <source>
+    <name>out</name>
+    <type>message</type>
+  </source>
+</block>

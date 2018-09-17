@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<block>
+  <name>AX.25 HDLC Framer</name>
+  <key>packetradio_hdlc_framer_ax25</key>
+  <category>[packetradio]</category>
+  <import>import packetradio</import>
+  <make>packetradio.hdlc_framer_ax25($stream_name, $flag_count)</make>
+  <param>
+    <name>Number of Flag Bytes</name>
+    <key>flag_count</key>
+    <value>5</value>
+    <type>int</type>
+  </param>
+  <param>
+    <name>Stream Tag Name</name>
+    <key>stream_name</key>
+    <value></value>
+    <type>string</type>
+  </param>
+  <sink>
+    <name>in</name>
+    <type>message</type>
+  </sink>
+  <source>
+    <name>out</name>
+    <type>byte</type>
+  </source>
+</block>
