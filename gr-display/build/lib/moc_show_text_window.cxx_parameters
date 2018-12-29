@@ -1,0 +1,16 @@
+-I/usr/include/qt4
+-I/usr/include/qt4/QtGui
+-I/usr/include/qt4/QtCore
+-I/home/handiko/gr-oot-archive/gr-display/include
+-I/home/handiko/gr-oot-archive/gr-display/lib
+-I/home/handiko/gr-oot-archive/gr-display/build/lib
+-I/usr/include
+-I/usr/include
+-I/usr/include/python2.7
+-I/usr/include
+-D$<$<NOT:$<CONFIG:Debug>>:QT_NO_DEBUG>
+-DQT_GUI_LIB
+-DQT_CORE_LIB
+-o
+/home/handiko/gr-oot-archive/gr-display/build/lib/moc_show_text_window.cxx
+/home/handiko/gr-oot-archive/gr-display/lib/show_text_window.h

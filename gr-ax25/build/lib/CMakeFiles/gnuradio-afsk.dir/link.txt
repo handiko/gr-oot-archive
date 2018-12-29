@@ -1,0 +1,1 @@
+/usr/bin/c++ -fPIC -O3 -DNDEBUG  -shared -Wl,-soname,libgnuradio-afsk.so.3.7.2 -o libgnuradio-afsk.so.3.7.2 CMakeFiles/gnuradio-afsk.dir/afsk1200_impl.cc.o CMakeFiles/gnuradio-afsk.dir/ax25decode_impl.cc.o CMakeFiles/gnuradio-afsk.dir/aprs2inet_impl.cc.o -lboost_filesystem -lboost_system -lgnuradio-runtime -lgnuradio-pmt 

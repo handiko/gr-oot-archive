@@ -1,0 +1,17 @@
+/usr/lib/pkgconfig/gnuradio-display.pc
+/usr/include/display/api.h
+/usr/include/display/show_image.h
+/usr/include/display/show_text.h
+/usr/lib/libgnuradio-display.so.3.7.2
+/usr/lib/libgnuradio-display.so
+/usr/lib/python2.7/dist-packages/display/_display_swig.so
+/usr/lib/python2.7/dist-packages/display/display_swig.py
+/usr/lib/python2.7/dist-packages/display/display_swig.pyc
+/usr/lib/python2.7/dist-packages/display/display_swig.pyo
+/usr/include/display/display/swig/display_swig.i
+/usr/include/display/display/swig/display_swig_doc.i
+/usr/lib/python2.7/dist-packages/display/__init__.py
+/usr/lib/python2.7/dist-packages/display/__init__.pyc
+/usr/lib/python2.7/dist-packages/display/__init__.pyo
+/usr/share/gnuradio/grc/blocks/display_show_image.xml
+/usr/share/gnuradio/grc/blocks/display_show_text.xml

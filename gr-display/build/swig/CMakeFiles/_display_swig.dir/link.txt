@@ -1,0 +1,1 @@
+/usr/bin/c++ -fPIC -O3 -DNDEBUG  -shared  -o _display_swig.so CMakeFiles/_display_swig.dir/display_swigPYTHON_wrap.cxx.o -Wl,-rpath,/home/handiko/gr-oot-archive/gr-display/build/lib: -lpython2.7 ../lib/libgnuradio-display.so.3.7.2 -lboost_filesystem -lboost_system -lgnuradio-runtime -lgnuradio-pmt -lQtGui -lQtCore -lpython2.7 

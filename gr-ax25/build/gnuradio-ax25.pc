@@ -1,0 +1,13 @@
+prefix=/usr
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include/afsk/display
+
+Name: gnuradio-ax25
+Description: GNU Radio block to  decode ax25 packets 
+URL: http://github.com/dl1ksv/
+Version: 3.7.2
+
+Requires: gnuradio-runtime
+Libs: -L${libdir} -lgnuradio-afsk
+Cflags: -I${includedir}
